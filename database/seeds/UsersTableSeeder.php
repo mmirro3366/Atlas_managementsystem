@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
             'under_name' => '太郎',
             'over_name_kana' => 'サトウ',
             'under_name_kana' => 'タロウ',
-            'mail_address' => 'satou@test.com',
+            'mail_address' => 'sato@test.com',
             'sex' => '1',
             'birth_day' => '20240101',
             'role' => '4',

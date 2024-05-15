@@ -13,6 +13,8 @@ use DB;
 
 use App\Models\Users\Subjects;
 
+use App\Http\Requests\RegisterFormRequest;
+
 class RegisterController extends Controller
 {
     /*
@@ -88,4 +90,20 @@ class RegisterController extends Controller
             return redirect()->route('loginView');
         }
     }
+
+    // //バリデーション↓
+    // /**
+    //  * ブログポストの保存
+    //  *
+    //  * @param  RegisterFormRequest  $request
+    //  * @return Response
+    //  */
+    // public function index(RegisterFormRequest $request)
+    // {
+    //     return view('index');
+    //     $input = $request->validated();
+
+    //     // // バリデーション済みデータの取得
+    //     // $validated = $request->validated();
+    // }
 }
