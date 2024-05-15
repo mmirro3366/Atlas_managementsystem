@@ -59,7 +59,7 @@ class RegisterController extends Controller
         return view('auth.register.register', compact('subjects'));
     }
 
-    public function registerPost(Request $request)
+    public function registerPost(RegisterFormRequest $request)
     {
         DB::beginTransaction();
         try{
@@ -98,9 +98,9 @@ class RegisterController extends Controller
     //  * @param  RegisterFormRequest  $request
     //  * @return Response
     //  */
-    // public function index(RegisterFormRequest $request)
+    // public function postValidates(RegisterFormRequest $request)
     // {
-    //     return view('index');
+    //     return view('sample.index',['msg'=>'OK']);
     //     $input = $request->validated();
 
     //     // // バリデーション済みデータの取得
