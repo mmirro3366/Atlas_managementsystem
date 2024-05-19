@@ -15,7 +15,8 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            return route('login');
+            //viewを追記。タイムアウト時にログイン画面表示のため。
+            return route('loginView');
         }
     }
 }
