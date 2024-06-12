@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Calendars\General\CalendarView;
 use App\Models\Calendars\ReserveSettings;
 use App\Models\Calendars\Calendar;
-use App\Models\USers\User;
+use App\Models\Users\User;
 use Auth;
 use DB;
 
@@ -33,6 +33,21 @@ class CalendarsController extends Controller
         }catch(\Exception $e){
             DB::rollback();
         }
+        return redirect()->route('calendar.general.show', ['user_id' => Auth::id()]);
+    }
+
+    // 予約削除
+    public function delete(Request $request)
+    {
+        $getPart = $request->getPart;
+        $getDate = $request->getData;
+        // $reserveDays = array_filter(array_combine($getDate, $getPart));
+        // foreach($reserveDays as $key => $value){
+            $reserve_settings = ReserveSettings::where('setting_reserve', $getDate)->where('setting_part', $getPart)->first();
+            // $reserve_settings->increment('limit_users');
+            // $reserve_settings->users()->detach(Auth::id());
+        // }
+
         return redirect()->route('calendar.general.show', ['user_id' => Auth::id()]);
     }
 }

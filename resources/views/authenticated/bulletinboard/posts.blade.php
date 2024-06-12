@@ -11,10 +11,11 @@
       <div class="post_bottom_area d-flex">
         <div class="d-flex post_status">
           <div class="mr-5">
-            <!-- コメント数修正中 -->
-            <i class="fa fa-comment"></i><span class="postComments_counts{{ $post->id }}">{{ $post->commentCounts($post->id) }}</span>
+            <!-- コメント数 -->
+            <i class="fa fa-comment" post_id="{{ $post->id }}"></i><span class="comment_counts{{ $post->id }}">{{ $post_comment->commentCounts($post->id) }}</span>
           </div>
           <div>
+            <!-- いいね数 -->
             @if(Auth::user()->is_Like($post->id))
             <p class="m-0"><i class="fas fa-heart un_like_btn" post_id="{{ $post->id }}"></i><span class="like_counts{{ $post->id }}">{{ $like->likeCounts($post->id) }}</span></p>
             @else

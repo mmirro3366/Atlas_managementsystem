@@ -24,11 +24,11 @@ class Post extends Model
     }
 
     public function subCategories(){
-        // リレーションの定義
+        belongsToMany("App\Models\Categories\SubCategory", "post_sub_categories", "sub_category_id", "post_id");// リレーションの定義
     }
 
     // コメント数
     public function commentCounts($post_id){
-        return Post::with('postComments')->find($post_id)->postComments();
+        return Post::with('postComments')->find($post_id)->postComments()->get()->count();;
     }
 }

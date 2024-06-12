@@ -28,7 +28,7 @@ class RegisterFormRequest extends FormRequest
             'under_name' => 'required|string|max:10',
             'over_name_kana' => 'required|string|max:30|regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u',
             'under_name_kana' => 'required|string|max:30|regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u',
-            'mail_address' => 'required|email|unique|max:100',
+            'mail_address' => 'required|email|unique:users,mail_address|max:100',
             'sex' => 'required|in: 1,2,3',
             //年月日はまとめて生年月日とする
             'old_year','old_month','old_day' => 'required|date',

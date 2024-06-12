@@ -15,4 +15,24 @@
     </div>
   </div>
 </div>
+
+<!--モーダルの中身-->
+<div class="modal js-modal">
+  <div class="modal__bg js-modal-close"></div>
+  <div class="modal__content">
+    <li>予約日：
+      <a class="modal_getData"></a>
+      <input type="hidden" class="modal_getData" name="getData" value="" form="deleteParts">
+    </li>
+    <li>時間：リモ
+      <a class="modal_getPart"></a>部
+      <input type="hidden" class="modal_getPart" name="getPart" value="" form="deleteParts">
+    </li>
+    <li>上記の予約をキャンセルしてもよろしいですか？</li>
+
+    <a class="js-modal-close btn btn-primary d-inline-block" href="" >閉じる</a>
+    <input type="submit" class="btn btn-danger d-block" value="キャンセル" onclick="return confirm('キャンセルしてもよろしいですか？')" form="deleteParts"></input>
+  </div>
+  {{ csrf_field()}}
+</div>
 @endsection
