@@ -43,6 +43,7 @@ class CalendarView{
           $html[] = '<td class="past-day border">';
         }else{
           $html[] = '<td class="border '.$day->getClassName().'">';
+          // $html[] = '<td class="reserve_counts{{ $reserve_setting_users->id }}">';
         }
         $html[] = $day->render();
         $html[] = $day->dayPartCounts($day->everyDay());

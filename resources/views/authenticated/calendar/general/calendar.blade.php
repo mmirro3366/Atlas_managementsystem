@@ -29,9 +29,10 @@
       <input type="hidden" class="modal_getPart" name="getPart" value="" form="deleteParts">
     </li>
     <li>上記の予約をキャンセルしてもよろしいですか？</li>
-
+    <div>
     <a class="js-modal-close btn btn-primary d-inline-block" href="" >閉じる</a>
     <input type="submit" class="btn btn-danger d-block" value="キャンセル" onclick="return confirm('キャンセルしてもよろしいですか？')" form="deleteParts"></input>
+    </div>
   </div>
   {{ csrf_field()}}
 </div>
