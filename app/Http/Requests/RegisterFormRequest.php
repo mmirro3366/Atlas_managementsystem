@@ -24,7 +24,7 @@ class RegisterFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'over_name' => 'required|string|max:3',
+            'over_name' => 'required|string|max:10',
             'under_name' => 'required|string|max:10',
             'over_name_kana' => 'required|string|max:30|regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u',
             'under_name_kana' => 'required|string|max:30|regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u',

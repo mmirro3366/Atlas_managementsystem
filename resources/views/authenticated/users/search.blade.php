@@ -57,10 +57,11 @@
   <div class="search_area w-25 border">
     <div class="">
       <div>
+        <label>検索</label>
         <input type="text" class="free_word" name="keyword" placeholder="キーワードを検索" form="userSearchRequest">
       </div>
       <div>
-        <lavel>カテゴリ</lavel>
+        <label>カテゴリ</label>
         <select form="userSearchRequest" name="category">
           <option value="name">名前</option>
           <option value="id">社員ID</option>
@@ -96,7 +97,8 @@
             <label>選択科目</label>
             <div name="subject" form="userSearchRequest" class="engineer">
               @foreach($subjects as $subject)
-              <span>{{ $subject->subject }}</span><input type="checkbox">
+              <!-- 検索時選択した科目の人表示 -->
+              <span>{{ $subject->subject }}</span><input type="checkbox"  name="subjects[]" value="{{ $subject->id }}" form="userSearchRequest">
               @endforeach
             </div>
           </div>
