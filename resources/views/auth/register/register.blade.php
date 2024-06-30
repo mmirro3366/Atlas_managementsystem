@@ -97,6 +97,9 @@
           @if($errors->has('old_day'))
           <span class="error_message">{{ $errors->first('old_day') }}</span>
           @endif
+          @if ($errors->has('year_month_day'))
+          <span class="error_message">{{ $errors->first('year_month_day') }}</span>
+          @endif
           <label class="d-block m-0 aa" style="font-size:13px">生年月日</label>
           <select class="old_year" name="old_year">
             <option value="none">-----</option>
@@ -215,7 +218,7 @@
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px">確認用パスワード</label>
           <div class="border-bottom border-primary">
-            <input type="password" class="border-0 w-100 password_confirmation" name="password">
+            <input type="password" class="border-0 w-100 password_confirmation" name="password_confirmation">
           </div>
         </div>
         <div class="mt-5 text-right">
