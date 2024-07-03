@@ -20,7 +20,8 @@
 <div class="modal js-modal">
   <div class="modal__bg js-modal-close"></div>
   <div class="modal__content">
-    <li>予約日：
+    <div class="w-50 m-auto">
+      <li>予約日：
       <a class="modal_getData"></a>
       <input type="hidden" class="modal_getData" name="getData" value="" form="deleteParts">
     </li>
@@ -29,9 +30,10 @@
       <input type="hidden" class="modal_getPart" name="getPart" value="" form="deleteParts">
     </li>
     <li>上記の予約をキャンセルしてもよろしいですか？</li>
-    <div>
+    </div>
+    <div class="d-flex justify-content-between w-50 m-auto pt-3">
     <a class="js-modal-close btn btn-primary d-inline-block" href="" >閉じる</a>
-    <input type="submit" class="btn btn-danger d-block" value="キャンセル" onclick="return confirm('キャンセルしてもよろしいですか？')" form="deleteParts"></input>
+    <input type="submit" class="btn btn-danger d-inline-block" value="キャンセル" onclick="return confirm('キャンセルしてもよろしいですか？')" form="deleteParts"></input>
     </div>
   </div>
   {{ csrf_field()}}

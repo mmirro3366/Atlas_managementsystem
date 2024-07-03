@@ -31,13 +31,13 @@ class CalendarWeekDay{
 
     $html[] = '<div class="text-left">';
     if($one_part){
-      $html[] = '<p class="day_part m-0 pt-1"><a href="'.route('calendar.admin.detail',[$one_part->setting_reserve,$one_part->setting_part]).'">1部</a>  '.$one_part->users()->get()->count().'</p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="'.route('calendar.admin.detail',[$one_part->setting_reserve,$one_part->setting_part]).'"class="pr-3">1部</a>  '.$one_part->users()->get()->count().'</p>';
     }
     if($two_part){
-      $html[] = '<p class="day_part m-0 pt-1"><a href="'.route('calendar.admin.detail',[$two_part->setting_reserve,$two_part->setting_part]).'">2部</a>  '.$two_part->users()->get()->count().'</p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="'.route('calendar.admin.detail',[$two_part->setting_reserve,$two_part->setting_part]).'"class="pr-3">2部</a>  '.$two_part->users()->get()->count().'</p>';
     }
     if($three_part){
-      $html[] = '<p class="day_part m-0 pt-1"><a href="'.route('calendar.admin.detail',[$three_part->setting_reserve,$three_part->setting_part]).'">3部</a>  '.$three_part->users()->get()->count().'</p>';
+      $html[] = '<p class="day_part m-0 pt-1"><a href="'.route('calendar.admin.detail',[$three_part->setting_reserve,$three_part->setting_part]).'"class="pr-3">3部</a>  '.$three_part->users()->get()->count().'</p>';
     }
     $html[] = '</div>';
 

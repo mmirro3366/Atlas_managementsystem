@@ -29,8 +29,11 @@ class PostsController extends Controller
             ->where('post_title', 'like', '%'.$request->keyword.'%')
             ->orWhere('post', 'like', '%'.$request->keyword.'%')->get();
         }else if($request->category_word){
+            //サブカテゴリー検索
             $sub_category = $request->category_word;
-            $posts = Post::with('user', 'postComments')->get();
+            $posts = Post::with('user', 'postComments','subCategories')->whereHas('subCategories', function($q) use ($sub_category){
+                $q->where('sub_category', $sub_category);})->get();
+            // dd($sub_category);
         }else if($request->like_posts){
             $likes = Auth::user()->likePostId()->get('like_post_id');
             $posts = Post::with('user', 'postComments')
@@ -38,7 +41,12 @@ class PostsController extends Controller
         }else if($request->my_posts){
             $posts = Post::with('user', 'postComments')
             ->where('user_id', Auth::id())->get();
+        // }else if($request->category_post){
+        //     $categories =User::whereIn('id', $user_id)->get();
+            // $posts = Post::with('user', 'postComments')
+            // ->whereIn('user_id', $categories)->get();
         }
+
         return view('authenticated.bulletinboard.posts', compact('posts', 'categories', 'like', 'post_comment'));
     }
 
@@ -58,6 +66,11 @@ class PostsController extends Controller
             'post_title' => $request->post_title,
             'post' => $request->post_body
         ]);
+        //投稿時のカテゴリーを保存して検索時に表示
+        $post_category = $request->post_category_id;
+        //findOrFailでエラーレスポンス表示
+        $post = Post::findOrFail($post->id);
+        $post->subCategories()->attach($post_category);
         return redirect()->route('post.show');
     }
 
