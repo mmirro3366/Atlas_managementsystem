@@ -57,25 +57,25 @@
   <div class="search_area w-25 border">
     <div class="">
       <div>
-        <label>検索</label>
+        <label class="search_area_btn">検索</label><br>
         <input type="text" class="free_word" name="keyword" placeholder="キーワードを検索" form="userSearchRequest">
       </div>
       <div>
-        <label>カテゴリ</label>
+        <label>カテゴリ</label><br>
         <select form="userSearchRequest" name="category">
           <option value="name">名前</option>
           <option value="id">社員ID</option>
         </select>
       </div>
       <div>
-        <label>並び替え</label>
+        <label>並び替え</label><br>
         <select name="updown" form="userSearchRequest">
           <option value="ASC">昇順</option>
           <option value="DESC">降順</option>
         </select>
       </div>
       <div class="">
-        <p class="m-0 search_conditions"><span>検索条件の追加</span></p>
+        <p class="m-0 search_conditions"><label>検索条件の追加 <i class="fa fa-angle-down"></i></label></p>
         <div class="search_conditions_inner">
           <div>
             <label>性別</label>
@@ -100,18 +100,18 @@
               <div class="">
               <!-- 検索時選択した科目の人表示 -->
               <input type="checkbox"  name="subjects[]" value="{{ $subject->id }}" form="userSearchRequest">
-              <label>{{ $subject->subject }}</label>
+              <span>{{ $subject->subject }}</span>
               </div>
               @endforeach
             </div>
           </div>
         </div>
       </div>
-      <div>
-        <input type="reset" value="リセット" form="userSearchRequest">
-      </div>
-      <div>
+      <div class="users_search_btn">
         <input type="submit" name="search_btn" value="検索" form="userSearchRequest">
+      </div>
+      <div class="users_reset_btn">
+        <input type="reset" value="リセット" form="userSearchRequest">
       </div>
     </div>
     <form action="{{ route('user.show') }}" method="get" id="userSearchRequest"></form>

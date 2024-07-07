@@ -138,6 +138,38 @@ li {
   background: #FFF;
 }
 
+/* ⇒投稿ボタン */
+.post_btn,
+.search_btn {
+  background-color: #03AAD2;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  color: #fff;
+  border: 0px;
+}
+
+.post_btn a {
+  color: #fff;
+  text-align: center;
+}
+
+.keyword_area {
+  padding: 10px;
+  display: flex;
+  width: 100%;
+}
+
+.search_btn {
+  width: 30%;
+}
+
+.keyword {
+  width: 70%;
+  border-radius: 10px;
+  border: 0px;
+}
+
 .post_area {
   background: #FFF;
   border-radius: 10px;
@@ -156,6 +188,7 @@ li {
 .un_like_btn {
   color: #E2254D;
 }
+
 
 .error_message {
   font-size: 12px;
@@ -237,10 +270,43 @@ li {
 .category_btn {
   font-size: 12px;
   border-radius: 5px;
-  padding: 0 5px;
+  padding: 5px;
+  margin-left: 3px;
   border: none;
-  background: #999;
+  background: #db7093;
   color: #FFF;
+  width: 48%;
+}
+
+.category_btn2 {
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+  background: #ffa500;
+  color: #FFF;
+  width: 48%;
+}
+
+/* .category_btn3 {
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+  background: #ECF1F6;
+  width: 100%;
+  text-align: left;
+} */
+
+
+[class^="category_num"] {
+  display: none;
+  border: 0px;
+  border-bottom: 0.5px solid gray;
+}
+
+.sub_categories2 {
+  padding-left: 10px;
 }
 
 .main_categories span,
@@ -248,6 +314,7 @@ li {
   list-style: none;
   cursor: pointer;
 }
+
 
 /* ユーザー検索 */
 .reserve_users_area {
@@ -262,8 +329,43 @@ li {
   border-radius: 5px;
 }
 
+.search_area label {
+  color: steelblue;
+}
+
+.search_area_btn {
+  font-size: 20px;
+}
+
+.search_area input,
+.search_area select {
+  border: 0;
+  background-color: #D3D3D3;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 .reserve_users_area span {
   font-size: 12px;
+}
+
+.users_search_btn,
+.users_reset_btn {
+  text-align: center;
+}
+
+.users_search_btn input {
+  background-color: #03AAD2;
+  color: #fff;
+  width: 80%;
+  padding: 10px;
+}
+
+.users_reset_btn input {
+  background-color: #ECF1F6;
+  color: #03AAD2;
+  width: 80%;
+  padding: 10px;
 }
 
 .one_person {
@@ -277,7 +379,7 @@ li {
 
 .search_conditions_inner {
   display: none;
-  background: #FFF;
+  background: #ECF1F6;
 }
 
 .subject_edit_btn {
@@ -288,4 +390,27 @@ li {
 
 .subject_inner {
   display: none;
+}
+
+/* スクール予約確認 */
+.text-center1 {
+  background-color: #03AAD2;
+}
+
+.text-center1 th {
+  color: #fff;
+  text-align: center;
+}
+
+.text-center2 {
+  background-color: #fff;
+}
+
+.text-center2:nth-child(2n+1) {
+  background-color: lightblue;
+}
+
+.text-center2 td {
+  text-align: center;
+  padding: 10px;
 }
