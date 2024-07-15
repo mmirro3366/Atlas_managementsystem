@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 
 @section('content')
-<div class="board_area w-100 border m-auto d-flex">
+<div class="board_area w-100 m-auto d-flex">
   <div class="post_view w-75 mt-5">
     <p class="w-75 m-auto">投稿一覧</p>
     @foreach($posts as $post)
@@ -27,8 +27,8 @@
     </div>
     @endforeach
   </div>
-  <div class="other_area border w-25">
-    <div class="border m-4">
+  <div class="other_area w-25">
+    <div class="m-4">
       <a href="{{ route('post.input') }}"><div class="post_btn">投稿</div></a>
       <div class="keyword_area">
         <input type="text" placeholder="キーワードを検索" name="keyword" class="keyword" form="postSearchRequest">
