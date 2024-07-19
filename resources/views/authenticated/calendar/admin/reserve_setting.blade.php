@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 @section('content')
-<div class="w-100 vh-100 d-flex pt-5 pb-5" style="align-items:center; justify-content:center; background:#ECF1F6;">
+<div class="w-100 d-flex pt-5 pb-5" style="align-items:center; justify-content:center; background:#ECF1F6;">
   <div class="w-75 m-auto text-center">
     <div class="w-100 m-auto pt-5 pb-5"  style="border-radius:5px; background:#FFF;">
       <p>{{ $calendar->getTitle() }}</p>
